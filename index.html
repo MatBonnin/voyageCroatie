@@ -1,550 +1,714 @@
 <!DOCTYPE html>
 <html>
-<head>
-    
+  <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+
+    <script>
+      L_NO_TOUCH = false;
+      L_DISABLE_3D = false;
+    </script>
+
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <style>
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_456166c41e42817a4bc93fd4666ea295 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-            </style>
-        
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
-</head>
-<body>
-    
-    
-            <div class="folium-map" id="map_456166c41e42817a4bc93fd4666ea295" ></div>
-        
-</body>
-<script>
-    
-    
-            var map_456166c41e42817a4bc93fd4666ea295 = L.map(
-                "map_456166c41e42817a4bc93fd4666ea295",
-                {
-                    center: [44.5, 16.5],
-                    crs: L.CRS.EPSG3857,
-                    zoom: 7,
-                    zoomControl: true,
-                    preferCanvas: false,
-                }
-            );
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"
+    />
 
-            
+    <meta
+      name="viewport"
+      content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <style>
+      #map_50952030ce1f729168f5af736c9ebe34 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+      }
+    </style>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#2196f3" />
 
-        
-    
-            var tile_layer_ea56c3a8c1c137bf0362bbcd0d4f13b5 = L.tileLayer(
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var marker_802773ce1807365ca80a41c2637ccec1 = L.marker(
-                [43.5081, 16.4402],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_3e762c74113088af19177bc62135599f = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_802773ce1807365ca80a41c2637ccec1.setIcon(icon_3e762c74113088af19177bc62135599f);
-        
-    
-        var popup_7c88281a672320c18d7981b5a9d30710 = L.popup({"maxWidth": 300});
+    <!-- Icônes pour iOS -->
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"
+    />
+  </head>
+  <body>
+    <div class="folium-map" id="map_50952030ce1f729168f5af736c9ebe34"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then((reg) => console.log('Service Worker enregistré:', reg))
+            .catch((err) => console.error('Erreur SW:', err));
+        });
+      }
+    </script>
+  </body>
+  <script>
+    var map_50952030ce1f729168f5af736c9ebe34 = L.map(
+      'map_50952030ce1f729168f5af736c9ebe34',
+      {
+        center: [44.5, 16.0],
+        crs: L.CRS.EPSG3857,
+        zoom: 7,
+        zoomControl: true,
+        preferCanvas: false,
+      }
+    );
 
-        
-            var html_4a0aa425a734ac02b2556dc95ed2ebc5 = $(`<div id="html_4a0aa425a734ac02b2556dc95ed2ebc5" style="width: 100.0%; height: 100.0%;">     <b>Split</b><br>     🏛️ Palais de Dioclétien, cathédrale St-Domnius, colline de Marjan.<br>     <a href="https://www.google.com/maps/place/Split,+Croatie/" target="_blank">🔗 Ouvrir dans Google Maps</a>     </div>`)[0];
-            popup_7c88281a672320c18d7981b5a9d30710.setContent(html_4a0aa425a734ac02b2556dc95ed2ebc5);
-        
+    var tile_layer_d3d16aa4ea76172d21d5cc04066f9a27 = L.tileLayer(
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      {
+        attribution:
+          'Data by \u0026copy; \u003ca href="http://openstreetmap.org"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href="http://www.openstreetmap.org/copyright"\u003eODbL\u003c/a\u003e.',
+        detectRetina: false,
+        maxNativeZoom: 18,
+        maxZoom: 18,
+        minZoom: 0,
+        noWrap: false,
+        opacity: 1,
+        subdomains: 'abc',
+        tms: false,
+      }
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        marker_802773ce1807365ca80a41c2637ccec1.bindPopup(popup_7c88281a672320c18d7981b5a9d30710)
-        ;
+    var locate_control_56d214876841519eacd20a42cd9bab06 = L.control
+      .locate({})
+      .addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        
-    
-    
-            var marker_ac39f845a14356f836af09cbcabcddef = L.marker(
-                [43.5179, 16.2502],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_3884185468876f6765348d87db5c1fdf = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_ac39f845a14356f836af09cbcabcddef.setIcon(icon_3884185468876f6765348d87db5c1fdf);
-        
-    
-        var popup_a8bb100017c8ce0728b61d29ce1b2d47 = L.popup({"maxWidth": 300});
+    locate_control_56d214876841519eacd20a42cd9bab06.start();
 
-        
-            var html_450f3119df40d6497d8d9cdaeb76ec10 = $(`<div id="html_450f3119df40d6497d8d9cdaeb76ec10" style="width: 100.0%; height: 100.0%;">     <b>Trogir</b><br>     🏰 Vieille ville médiévale (UNESCO), cathédrale Saint-Laurent.<br>     <a href="https://www.google.com/maps/place/Trogir,+Croatie/" target="_blank">🔗 Ouvrir dans Google Maps</a>     </div>`)[0];
-            popup_a8bb100017c8ce0728b61d29ce1b2d47.setContent(html_450f3119df40d6497d8d9cdaeb76ec10);
-        
+    var marker_5eb90a2f2222acce08f805f11a7ca508 = L.marker(
+      [43.5081, 16.4402],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        marker_ac39f845a14356f836af09cbcabcddef.bindPopup(popup_a8bb100017c8ce0728b61d29ce1b2d47)
-        ;
+    var icon_7747db8de6470fcc9acfc1fde0ab01a7 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'map-marker',
+      iconColor: 'white',
+      markerColor: 'blue',
+      prefix: 'fa',
+    });
+    marker_5eb90a2f2222acce08f805f11a7ca508.setIcon(
+      icon_7747db8de6470fcc9acfc1fde0ab01a7
+    );
 
-        
-    
-    
-            var marker_22a6f528e1b01e40aba4a7f3a44c5180 = L.marker(
-                [43.8014, 15.9622],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_763a166bc60affee6e6c38357c06bfd0 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_22a6f528e1b01e40aba4a7f3a44c5180.setIcon(icon_763a166bc60affee6e6c38357c06bfd0);
-        
-    
-        var popup_447c6e23a1228cb41489542c3423fead = L.popup({"maxWidth": 300});
+    var popup_335004d1dffe513836fced569efb1b2d = L.popup({ maxWidth: 250 });
 
-        
-            var html_377934934108f28bec33ee526a7b77ae = $(`<div id="html_377934934108f28bec33ee526a7b77ae" style="width: 100.0%; height: 100.0%;">     <b>Krka (Lozovac)</b><br>     🌊 Parc national, cascades, sentiers sur pontons.<br>     <a href="https://www.google.com/maps/place/Krka+(Lozovac),+Croatie/" target="_blank">🔗 Ouvrir dans Google Maps</a>     </div>`)[0];
-            popup_447c6e23a1228cb41489542c3423fead.setContent(html_377934934108f28bec33ee526a7b77ae);
-        
+    var html_4947076ed8a5353510609a58d2f8564d = $(
+      `<div id="html_4947076ed8a5353510609a58d2f8564d" style="width: 100.0%; height: 100.0%;"><b>Split</b><br>🏛️ Palais de Dioclétien, cathédrale St-Domnius, colline de Marjan.<br><a href='https://www.google.com/maps/place/Split,+Croatie/' target='_blank'>Voir sur Google Maps</a></div>`
+    )[0];
+    popup_335004d1dffe513836fced569efb1b2d.setContent(
+      html_4947076ed8a5353510609a58d2f8564d
+    );
 
-        marker_22a6f528e1b01e40aba4a7f3a44c5180.bindPopup(popup_447c6e23a1228cb41489542c3423fead)
-        ;
+    marker_5eb90a2f2222acce08f805f11a7ca508.bindPopup(
+      popup_335004d1dffe513836fced569efb1b2d
+    );
 
-        
-    
-    
-            var marker_691b6e7f5cf40b261839456155747033 = L.marker(
-                [43.735, 15.888],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_a8ff528a392693605433d54fe01b52b5 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_691b6e7f5cf40b261839456155747033.setIcon(icon_a8ff528a392693605433d54fe01b52b5);
-        
-    
-        var popup_1daa51f9761261ac7af7a8118da30c9e = L.popup({"maxWidth": 300});
+    var marker_4ebdfe4cb071859174b7633929ee97b4 = L.marker(
+      [43.5179, 16.2502],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        
-            var html_4877f61cbc33c913bc19c0887e0b7970 = $(`<div id="html_4877f61cbc33c913bc19c0887e0b7970" style="width: 100.0%; height: 100.0%;">     <b>Šibenik</b><br>     ⛪ Cathédrale Saint-Jacques, forteresses, ruelles pittoresques.<br>     <a href="https://www.google.com/maps/place/Šibenik,+Croatie/" target="_blank">🔗 Ouvrir dans Google Maps</a>     </div>`)[0];
-            popup_1daa51f9761261ac7af7a8118da30c9e.setContent(html_4877f61cbc33c913bc19c0887e0b7970);
-        
+    var icon_2b4731542cd3ef497a10c936600b93ae = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'map-marker',
+      iconColor: 'white',
+      markerColor: 'blue',
+      prefix: 'fa',
+    });
+    marker_4ebdfe4cb071859174b7633929ee97b4.setIcon(
+      icon_2b4731542cd3ef497a10c936600b93ae
+    );
 
-        marker_691b6e7f5cf40b261839456155747033.bindPopup(popup_1daa51f9761261ac7af7a8118da30c9e)
-        ;
+    var popup_89ed50830660fae21bdf2fad47ce3395 = L.popup({ maxWidth: 250 });
 
-        
-    
-    
-            var marker_a261d547e89e3fe3f46739827be08554 = L.marker(
-                [44.1194, 15.2314],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_b6506a00f82a7fcbc4e8f02cfd67c1c4 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_a261d547e89e3fe3f46739827be08554.setIcon(icon_b6506a00f82a7fcbc4e8f02cfd67c1c4);
-        
-    
-        var popup_75d9c856eaf3a5bc649de9dfa19a25b4 = L.popup({"maxWidth": 300});
+    var html_b66cc788afca80ca1847ceb0081dd112 = $(
+      `<div id="html_b66cc788afca80ca1847ceb0081dd112" style="width: 100.0%; height: 100.0%;"><b>Trogir</b><br>🏰 Vieille ville médiévale (UNESCO), cathédrale Saint-Laurent.<br><a href='https://www.google.com/maps/place/Trogir,+Croatie/' target='_blank'>Voir sur Google Maps</a></div>`
+    )[0];
+    popup_89ed50830660fae21bdf2fad47ce3395.setContent(
+      html_b66cc788afca80ca1847ceb0081dd112
+    );
 
-        
-            var html_a1be08a284da8e82c974cd0290b4e6dd = $(`<div id="html_a1be08a284da8e82c974cd0290b4e6dd" style="width: 100.0%; height: 100.0%;">     <b>Zadar</b><br>     🎵 Orgue marin, Salut au Soleil, coucher de soleil magique.<br>     <a href="https://www.google.com/maps/place/Zadar,+Croatie/" target="_blank">🔗 Ouvrir dans Google Maps</a>     </div>`)[0];
-            popup_75d9c856eaf3a5bc649de9dfa19a25b4.setContent(html_a1be08a284da8e82c974cd0290b4e6dd);
-        
+    marker_4ebdfe4cb071859174b7633929ee97b4.bindPopup(
+      popup_89ed50830660fae21bdf2fad47ce3395
+    );
 
-        marker_a261d547e89e3fe3f46739827be08554.bindPopup(popup_75d9c856eaf3a5bc649de9dfa19a25b4)
-        ;
+    var marker_6f4c7c731207c964981c480c20421f98 = L.marker(
+      [43.8014, 15.9622],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        
-    
-    
-            var marker_3e97d5be8eb9aac4e5175426cef37afc = L.marker(
-                [44.8806, 15.6167],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_a8ab19a6b0c6662e30cc7fc391055b3d = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_3e97d5be8eb9aac4e5175426cef37afc.setIcon(icon_a8ab19a6b0c6662e30cc7fc391055b3d);
-        
-    
-        var popup_d1b7f330667dd0170cc70fa3f89c8b94 = L.popup({"maxWidth": 300});
+    var icon_263d3e5aed0df05fd97fdc5d8630c0e1 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'map-marker',
+      iconColor: 'white',
+      markerColor: 'blue',
+      prefix: 'fa',
+    });
+    marker_6f4c7c731207c964981c480c20421f98.setIcon(
+      icon_263d3e5aed0df05fd97fdc5d8630c0e1
+    );
 
-        
-            var html_cbd013fcb93e1fbb06795d274bf38a45 = $(`<div id="html_cbd013fcb93e1fbb06795d274bf38a45" style="width: 100.0%; height: 100.0%;">     <b>Plitvice (Rastovaca)</b><br>     🌲 Lacs turquoise et cascades (UNESCO), nature impressionnante.<br>     <a href="https://www.google.com/maps/place/Plitvice+(Rastovaca),+Croatie/" target="_blank">🔗 Ouvrir dans Google Maps</a>     </div>`)[0];
-            popup_d1b7f330667dd0170cc70fa3f89c8b94.setContent(html_cbd013fcb93e1fbb06795d274bf38a45);
-        
+    var popup_bff5bde943732171e6ef984969993a5a = L.popup({ maxWidth: 250 });
 
-        marker_3e97d5be8eb9aac4e5175426cef37afc.bindPopup(popup_d1b7f330667dd0170cc70fa3f89c8b94)
-        ;
+    var html_40cf1dcbea786220b413d8fd315c33ef = $(
+      `<div id="html_40cf1dcbea786220b413d8fd315c33ef" style="width: 100.0%; height: 100.0%;"><b>Krka (Lozovac)</b><br>🌊 Parc national, cascades, sentiers sur pontons.<br><a href='https://www.google.com/maps/place/Krka (Lozovac),+Croatie/' target='_blank'>Voir sur Google Maps</a></div>`
+    )[0];
+    popup_bff5bde943732171e6ef984969993a5a.setContent(
+      html_40cf1dcbea786220b413d8fd315c33ef
+    );
 
-        
-    
-    
-            var marker_f86cd0bd7f21150b228629424d4e9b03 = L.marker(
-                [45.1208, 15.5839],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_586f7642ae4e1854b6e6cadadd0e637e = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_f86cd0bd7f21150b228629424d4e9b03.setIcon(icon_586f7642ae4e1854b6e6cadadd0e637e);
-        
-    
-        var popup_7cb0fb779b0f1e31326e24be5d25a9db = L.popup({"maxWidth": 300});
+    marker_6f4c7c731207c964981c480c20421f98.bindPopup(
+      popup_bff5bde943732171e6ef984969993a5a
+    );
 
-        
-            var html_584b497c3d371def3a91b2337721dbfc = $(`<div id="html_584b497c3d371def3a91b2337721dbfc" style="width: 100.0%; height: 100.0%;">     <b>Rastoke (Slunj)</b><br>     🏞️ Village de moulins et mini-cascades charmantes.<br>     <a href="https://www.google.com/maps/place/Rastoke+(Slunj),+Croatie/" target="_blank">🔗 Ouvrir dans Google Maps</a>     </div>`)[0];
-            popup_7cb0fb779b0f1e31326e24be5d25a9db.setContent(html_584b497c3d371def3a91b2337721dbfc);
-        
+    var marker_01b906fa8c47d11e52f9dd14a7ed5a47 = L.marker(
+      [43.735, 15.888],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        marker_f86cd0bd7f21150b228629424d4e9b03.bindPopup(popup_7cb0fb779b0f1e31326e24be5d25a9db)
-        ;
+    var icon_a66cff4f1e2b7fa9e5816dea89331efd = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'map-marker',
+      iconColor: 'white',
+      markerColor: 'blue',
+      prefix: 'fa',
+    });
+    marker_01b906fa8c47d11e52f9dd14a7ed5a47.setIcon(
+      icon_a66cff4f1e2b7fa9e5816dea89331efd
+    );
 
-        
-    
-    
-            var marker_d88e646241d9fa62b16dae200607c863 = L.marker(
-                [45.8036, 15.7097],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_a3ae337d49ada57c66fc27d6916e5e64 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_d88e646241d9fa62b16dae200607c863.setIcon(icon_a3ae337d49ada57c66fc27d6916e5e64);
-        
-    
-        var popup_76746fe674d750698d7c24e5f799f5f7 = L.popup({"maxWidth": 300});
+    var popup_ecd2298d371e8b62d6fb3381c36dc856 = L.popup({ maxWidth: 250 });
 
-        
-            var html_47ca93d5c9aadfd906c653305bb332bb = $(`<div id="html_47ca93d5c9aadfd906c653305bb332bb" style="width: 100.0%; height: 100.0%;">     <b>Samobor</b><br>     🍰 Ville baroque, château en ruines, fameux gâteau kremšnita.<br>     <a href="https://www.google.com/maps/place/Samobor,+Croatie/" target="_blank">🔗 Ouvrir dans Google Maps</a>     </div>`)[0];
-            popup_76746fe674d750698d7c24e5f799f5f7.setContent(html_47ca93d5c9aadfd906c653305bb332bb);
-        
+    var html_3567ee7b9f048ffbcf2a0274ecd988ae = $(
+      `<div id="html_3567ee7b9f048ffbcf2a0274ecd988ae" style="width: 100.0%; height: 100.0%;"><b>Šibenik</b><br>⛪ Cathédrale Saint-Jacques, forteresses, ruelles.<br><a href='https://www.google.com/maps/place/Šibenik,+Croatie/' target='_blank'>Voir sur Google Maps</a></div>`
+    )[0];
+    popup_ecd2298d371e8b62d6fb3381c36dc856.setContent(
+      html_3567ee7b9f048ffbcf2a0274ecd988ae
+    );
 
-        marker_d88e646241d9fa62b16dae200607c863.bindPopup(popup_76746fe674d750698d7c24e5f799f5f7)
-        ;
+    marker_01b906fa8c47d11e52f9dd14a7ed5a47.bindPopup(
+      popup_ecd2298d371e8b62d6fb3381c36dc856
+    );
 
-        
-    
-    
-            var marker_5f8254167ac2c46738626cee4c2886ec = L.marker(
-                [45.815, 15.9819],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_0e5df4cb187db87c48ab681e7dc363df = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
-            );
-            marker_5f8254167ac2c46738626cee4c2886ec.setIcon(icon_0e5df4cb187db87c48ab681e7dc363df);
-        
-    
-        var popup_82d9fac28a691603604f676e196ecf00 = L.popup({"maxWidth": 300});
+    var marker_12b20a3f5dd2d4cc184710c53cc1d2fe = L.marker(
+      [44.1194, 15.2314],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        
-            var html_47c4e1e392db6f50eea99577a2adc2e9 = $(`<div id="html_47c4e1e392db6f50eea99577a2adc2e9" style="width: 100.0%; height: 100.0%;">     <b>Zagreb</b><br>     🏙️ Capitale vivante, marché Dolac, ville haute et musées originaux.<br>     <a href="https://www.google.com/maps/place/Zagreb,+Croatie/" target="_blank">🔗 Ouvrir dans Google Maps</a>     </div>`)[0];
-            popup_82d9fac28a691603604f676e196ecf00.setContent(html_47c4e1e392db6f50eea99577a2adc2e9);
-        
+    var icon_fb7d7060217d9ae640e3b5eccb605d19 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'map-marker',
+      iconColor: 'white',
+      markerColor: 'blue',
+      prefix: 'fa',
+    });
+    marker_12b20a3f5dd2d4cc184710c53cc1d2fe.setIcon(
+      icon_fb7d7060217d9ae640e3b5eccb605d19
+    );
 
-        marker_5f8254167ac2c46738626cee4c2886ec.bindPopup(popup_82d9fac28a691603604f676e196ecf00)
-        ;
+    var popup_f3f6b209f80af18e2c84ff72e91c2a47 = L.popup({ maxWidth: 250 });
 
-        
-    
-    
-            ant_path_464a9cb0ff9f3f3cdaa886d592cfd4ca = L.polyline.antPath(
-              [[43.5081, 16.4402], [43.5179, 16.2502], [43.8014, 15.9622], [43.735, 15.888], [44.1194, 15.2314], [44.8806, 15.6167], [45.1208, 15.5839], [45.8036, 15.7097], [45.815, 15.9819]],
-              {"bubblingMouseEvents": true, "color": "green", "dashArray": [10, 20], "dashOffset": null, "delay": 800, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-        ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var marker_1f6a80d4210916f4ebd646db36cc16d0 = L.marker(
-                [43.5013, 16.6149],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_10771e33ec6a0f72e8927dbb080b23a5 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_1f6a80d4210916f4ebd646db36cc16d0.setIcon(icon_10771e33ec6a0f72e8927dbb080b23a5);
-        
-    
-        var popup_53b9526565d8f0d7157daea7499d7722 = L.popup({"maxWidth": 300});
+    var html_8bf7b8d97522a9084e12e6fbfdbce442 = $(
+      `<div id="html_8bf7b8d97522a9084e12e6fbfdbce442" style="width: 100.0%; height: 100.0%;"><b>Zadar</b><br>🎵 Orgue marin, Salut au Soleil, coucher de soleil magique.<br><a href='https://www.google.com/maps/place/Zadar,+Croatie/' target='_blank'>Voir sur Google Maps</a></div>`
+    )[0];
+    popup_f3f6b209f80af18e2c84ff72e91c2a47.setContent(
+      html_8bf7b8d97522a9084e12e6fbfdbce442
+    );
 
-        
-            var html_f73a7ee894b79bc30719cdd055bcce41 = $(`<div id="html_f73a7ee894b79bc30719cdd055bcce41" style="width: 100.0%; height: 100.0%;"><b>Spot vers Plitvice - Park4Night</b><br>Spot référencé sur Park4Night :<br><a href='https://park4night.com/fr/place/373306' target='_blank'>🔗 Voir sur Park4Night</a></div>`)[0];
-            popup_53b9526565d8f0d7157daea7499d7722.setContent(html_f73a7ee894b79bc30719cdd055bcce41);
-        
+    marker_12b20a3f5dd2d4cc184710c53cc1d2fe.bindPopup(
+      popup_f3f6b209f80af18e2c84ff72e91c2a47
+    );
 
-        marker_1f6a80d4210916f4ebd646db36cc16d0.bindPopup(popup_53b9526565d8f0d7157daea7499d7722)
-        ;
+    var marker_5c1b82d34945b4245ed95a12faa72b91 = L.marker(
+      [44.8806, 15.6167],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        
-    
-    
-            var marker_cc887e5a9f11a7ac719f4d94737e5900 = L.marker(
-                [43.5463, 16.5167],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_b8631378b42df34b66e1e5eda869bc36 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_cc887e5a9f11a7ac719f4d94737e5900.setIcon(icon_b8631378b42df34b66e1e5eda869bc36);
-        
-    
-        var popup_e2c8d45964b72417e36016c42c71b739 = L.popup({"maxWidth": 300});
+    var icon_d9d4f9cb296df9c68a6b926305b3b6aa = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'map-marker',
+      iconColor: 'white',
+      markerColor: 'blue',
+      prefix: 'fa',
+    });
+    marker_5c1b82d34945b4245ed95a12faa72b91.setIcon(
+      icon_d9d4f9cb296df9c68a6b926305b3b6aa
+    );
 
-        
-            var html_cfa88997d658cf791da0dc843c9dc1a0 = $(`<div id="html_cfa88997d658cf791da0dc843c9dc1a0" style="width: 100.0%; height: 100.0%;"><b>Zone ombragée vers Plitvice</b><br>Coin arboré potentiellement agréable pour bivouaquer.</div>`)[0];
-            popup_e2c8d45964b72417e36016c42c71b739.setContent(html_cfa88997d658cf791da0dc843c9dc1a0);
-        
+    var popup_d37f475c34c80f5a9c8da441b88d307e = L.popup({ maxWidth: 250 });
 
-        marker_cc887e5a9f11a7ac719f4d94737e5900.bindPopup(popup_e2c8d45964b72417e36016c42c71b739)
-        ;
+    var html_a0842ea565c373786d6d5f982771d036 = $(
+      `<div id="html_a0842ea565c373786d6d5f982771d036" style="width: 100.0%; height: 100.0%;"><b>Plitvice (Rastovaca)</b><br>🌲 Lacs turquoise et cascades (UNESCO).<br><a href='https://www.google.com/maps/place/Plitvice (Rastovaca),+Croatie/' target='_blank'>Voir sur Google Maps</a></div>`
+    )[0];
+    popup_d37f475c34c80f5a9c8da441b88d307e.setContent(
+      html_a0842ea565c373786d6d5f982771d036
+    );
 
-        
-    
-    
-            var marker_943b1d7ce979c249fa9c297f31728664 = L.marker(
-                [43.5599, 16.4034],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_20a020fe2f9f981a90dd2d1453b4fdb1 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_943b1d7ce979c249fa9c297f31728664.setIcon(icon_20a020fe2f9f981a90dd2d1453b4fdb1);
-        
-    
-        var popup_70b6ce470313bbb755c2cc936d8ec379 = L.popup({"maxWidth": 300});
+    marker_5c1b82d34945b4245ed95a12faa72b91.bindPopup(
+      popup_d37f475c34c80f5a9c8da441b88d307e
+    );
 
-        
-            var html_44f36396d4454398079e9a37454e867f = $(`<div id="html_44f36396d4454398079e9a37454e867f" style="width: 100.0%; height: 100.0%;"><b>Zone cimetière (Plitvice)</b><br>Zone près d’un cimetière, discrète et peut-être praticable pour une nuit.</div>`)[0];
-            popup_70b6ce470313bbb755c2cc936d8ec379.setContent(html_44f36396d4454398079e9a37454e867f);
-        
+    var marker_1a2ca04cb5552f2e7f5ead8db409f9ce = L.marker(
+      [45.1208, 15.5839],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        marker_943b1d7ce979c249fa9c297f31728664.bindPopup(popup_70b6ce470313bbb755c2cc936d8ec379)
-        ;
+    var icon_0d9b82d150de1be978158e7f30ded499 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'map-marker',
+      iconColor: 'white',
+      markerColor: 'blue',
+      prefix: 'fa',
+    });
+    marker_1a2ca04cb5552f2e7f5ead8db409f9ce.setIcon(
+      icon_0d9b82d150de1be978158e7f30ded499
+    );
 
-        
-    
-    
-            var marker_327cac24a2bccabaf007a2ce017ce87a = L.marker(
-                [43.5336, 16.2723],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_7d918aac0b603ac4d9d7f0a0d0b965ce = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_327cac24a2bccabaf007a2ce017ce87a.setIcon(icon_7d918aac0b603ac4d9d7f0a0d0b965ce);
-        
-    
-        var popup_864be6de0d16c2d87994e88af2926d19 = L.popup({"maxWidth": 300});
+    var popup_5bbc92ec9df3f67c9250b410b334b104 = L.popup({ maxWidth: 250 });
 
-        
-            var html_f9842aacf90cf7c80107d9430fae1262 = $(`<div id="html_f9842aacf90cf7c80107d9430fae1262" style="width: 100.0%; height: 100.0%;"><b>Entrée Trogir</b><br>Spot à l'entrée de Trogir, semble bien situé pour un arrêt pratique.</div>`)[0];
-            popup_864be6de0d16c2d87994e88af2926d19.setContent(html_f9842aacf90cf7c80107d9430fae1262);
-        
+    var html_4bd6048f61ab00b114837bc279024a07 = $(
+      `<div id="html_4bd6048f61ab00b114837bc279024a07" style="width: 100.0%; height: 100.0%;"><b>Rastoke (Slunj)</b><br>🏞️ Village de moulins et mini-cascades.<br><a href='https://www.google.com/maps/place/Rastoke (Slunj),+Croatie/' target='_blank'>Voir sur Google Maps</a></div>`
+    )[0];
+    popup_5bbc92ec9df3f67c9250b410b334b104.setContent(
+      html_4bd6048f61ab00b114837bc279024a07
+    );
 
-        marker_327cac24a2bccabaf007a2ce017ce87a.bindPopup(popup_864be6de0d16c2d87994e88af2926d19)
-        ;
+    marker_1a2ca04cb5552f2e7f5ead8db409f9ce.bindPopup(
+      popup_5bbc92ec9df3f67c9250b410b334b104
+    );
 
-        
-    
-    
-            var marker_e6a2b001b94a997c830df361197f9d42 = L.marker(
-                [43.7873, 16.0018],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_7447373135c79a38d82b43e6497a956c = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_e6a2b001b94a997c830df361197f9d42.setIcon(icon_7447373135c79a38d82b43e6497a956c);
-        
-    
-        var popup_15393497707cb0b471415b814a04e91b = L.popup({"maxWidth": 300});
+    var marker_fcbc5d98cc7078502611be6adebad006 = L.marker(
+      [45.8036, 15.7097],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        
-            var html_d8bcaec47e12710747ec3955f7c925a8 = $(`<div id="html_d8bcaec47e12710747ec3955f7c925a8" style="width: 100.0%; height: 100.0%;"><b>Spot vers Lozovac - Park4Night</b><br>Très bon emplacement proche de Lozovac :<br><a href='https://park4night.com/fr/place/492081' target='_blank'>🔗 Voir sur Park4Night</a></div>`)[0];
-            popup_15393497707cb0b471415b814a04e91b.setContent(html_d8bcaec47e12710747ec3955f7c925a8);
-        
+    var icon_a5412aa10ee0f57ba7d3aa0ba07db8dc = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'map-marker',
+      iconColor: 'white',
+      markerColor: 'blue',
+      prefix: 'fa',
+    });
+    marker_fcbc5d98cc7078502611be6adebad006.setIcon(
+      icon_a5412aa10ee0f57ba7d3aa0ba07db8dc
+    );
 
-        marker_e6a2b001b94a997c830df361197f9d42.bindPopup(popup_15393497707cb0b471415b814a04e91b)
-        ;
+    var popup_c66279b5f225d7bb06d53905cfda4ce4 = L.popup({ maxWidth: 250 });
 
-        
-    
-    
-            var marker_1a50e088ff8a01483b85c8e7f9a664bb = L.marker(
-                [44.0713, 15.5979],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_829dfdea5ed22af63cd39c17cc96fdda = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_1a50e088ff8a01483b85c8e7f9a664bb.setIcon(icon_829dfdea5ed22af63cd39c17cc96fdda);
-        
-    
-        var popup_9b0f43b0b103e5713f4b68243510eb15 = L.popup({"maxWidth": 300});
+    var html_1c393296ab4447c7f7846885ffe8f37d = $(
+      `<div id="html_1c393296ab4447c7f7846885ffe8f37d" style="width: 100.0%; height: 100.0%;"><b>Samobor</b><br>🍰 Ville baroque, château en ruines, gâteau kremšnita.<br><a href='https://www.google.com/maps/place/Samobor,+Croatie/' target='_blank'>Voir sur Google Maps</a></div>`
+    )[0];
+    popup_c66279b5f225d7bb06d53905cfda4ce4.setContent(
+      html_1c393296ab4447c7f7846885ffe8f37d
+    );
 
-        
-            var html_40ebfd00808e874535c836bb95751efc = $(`<div id="html_40ebfd00808e874535c836bb95751efc" style="width: 100.0%; height: 100.0%;"><b>Zadar spot - Park4Night</b><br>Emplacement sympa proche de Zadar :<br><a href='https://park4night.com/fr/place/192420' target='_blank'>🔗 Voir sur Park4Night</a></div>`)[0];
-            popup_9b0f43b0b103e5713f4b68243510eb15.setContent(html_40ebfd00808e874535c836bb95751efc);
-        
+    marker_fcbc5d98cc7078502611be6adebad006.bindPopup(
+      popup_c66279b5f225d7bb06d53905cfda4ce4
+    );
 
-        marker_1a50e088ff8a01483b85c8e7f9a664bb.bindPopup(popup_9b0f43b0b103e5713f4b68243510eb15)
-        ;
+    var marker_d6990caaa6b3148d04fd6c3c77e92c3c = L.marker(
+      [45.815, 15.9819],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        
-    
-    
-            var marker_b4b4777928c6643d9834e5fb5616737c = L.marker(
-                [44.9433, 15.6694],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_8b35f71a51bdf10717c56329a706d36b = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_b4b4777928c6643d9834e5fb5616737c.setIcon(icon_8b35f71a51bdf10717c56329a706d36b);
-        
-    
-        var popup_a78a9871e30dd1400f95c516930be711 = L.popup({"maxWidth": 300});
+    var icon_7d9bb783e9362832a1556dcea0f6cce9 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'map-marker',
+      iconColor: 'white',
+      markerColor: 'blue',
+      prefix: 'fa',
+    });
+    marker_d6990caaa6b3148d04fd6c3c77e92c3c.setIcon(
+      icon_7d9bb783e9362832a1556dcea0f6cce9
+    );
 
-        
-            var html_d11541600841426b8b3fbcf2639e17b2 = $(`<div id="html_d11541600841426b8b3fbcf2639e17b2" style="width: 100.0%; height: 100.0%;"><b>Spot vers Plitvice (moins sûr)</b><br>Option moins certaine mais trouvable sur Park4Night :<br><a href='https://park4night.com/fr/place/569596' target='_blank'>🔗 Voir sur Park4Night</a></div>`)[0];
-            popup_a78a9871e30dd1400f95c516930be711.setContent(html_d11541600841426b8b3fbcf2639e17b2);
-        
+    var popup_5b515e14e9b503a96630170091a44eee = L.popup({ maxWidth: 250 });
 
-        marker_b4b4777928c6643d9834e5fb5616737c.bindPopup(popup_a78a9871e30dd1400f95c516930be711)
-        ;
+    var html_fb027ab01672e5d3bc675c0ca7b6cc06 = $(
+      `<div id="html_fb027ab01672e5d3bc675c0ca7b6cc06" style="width: 100.0%; height: 100.0%;"><b>Zagreb</b><br>🏙️ Capitale, marché Dolac, ville haute, musées originaux.<br><a href='https://www.google.com/maps/place/Zagreb,+Croatie/' target='_blank'>Voir sur Google Maps</a></div>`
+    )[0];
+    popup_5b515e14e9b503a96630170091a44eee.setContent(
+      html_fb027ab01672e5d3bc675c0ca7b6cc06
+    );
 
-        
-    
-    
-            var marker_9175e5c989d473402bdb272c7916589a = L.marker(
-                [45.1318, 15.5422],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_fa793c7158e6473bf50afaf952160314 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_9175e5c989d473402bdb272c7916589a.setIcon(icon_fa793c7158e6473bf50afaf952160314);
-        
-    
-        var popup_35d22f0c759e24792505a23a2e1ff0b3 = L.popup({"maxWidth": 300});
+    marker_d6990caaa6b3148d04fd6c3c77e92c3c.bindPopup(
+      popup_5b515e14e9b503a96630170091a44eee
+    );
 
-        
-            var html_9b7bb468f4f661853468677ed7a1912b = $(`<div id="html_9b7bb468f4f661853468677ed7a1912b" style="width: 100.0%; height: 100.0%;"><b>Recoin isolé près de Plitvice</b><br>Lieu reculé qui pourrait bien convenir :<br><a href='https://park4night.com/fr/place/161596' target='_blank'>🔗 Voir sur Park4Night</a></div>`)[0];
-            popup_35d22f0c759e24792505a23a2e1ff0b3.setContent(html_9b7bb468f4f661853468677ed7a1912b);
-        
+    var poly_line_428fb2a4c0f53b4a90a9088bc7244a84 = L.polyline(
+      [
+        [43.5081, 16.4402],
+        [43.5179, 16.2502],
+        [43.8014, 15.9622],
+        [43.735, 15.888],
+        [44.1194, 15.2314],
+        [44.8806, 15.6167],
+        [45.1208, 15.5839],
+        [45.8036, 15.7097],
+        [45.815, 15.9819],
+      ],
+      {
+        bubblingMouseEvents: true,
+        color: 'blue',
+        dashArray: null,
+        dashOffset: null,
+        fill: false,
+        fillColor: 'blue',
+        fillOpacity: 0.2,
+        fillRule: 'evenodd',
+        lineCap: 'round',
+        lineJoin: 'round',
+        noClip: false,
+        opacity: 0.6,
+        smoothFactor: 1.0,
+        stroke: true,
+        weight: 4,
+      }
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        marker_9175e5c989d473402bdb272c7916589a.bindPopup(popup_35d22f0c759e24792505a23a2e1ff0b3)
-        ;
+    var marker_80c69410b4a9ebae0777fd9364b062e5 = L.marker(
+      [43.5013, 16.6149],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        
-    
-    
-            var marker_2ed3dfb68bf5b292c94b0b274c0bba7d = L.marker(
-                [45.1372, 15.5318],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_5254204207e296c03395dfedace37cc2 = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_2ed3dfb68bf5b292c94b0b274c0bba7d.setIcon(icon_5254204207e296c03395dfedace37cc2);
-        
-    
-        var popup_9a1a2934e474193be83eac530bee3eb5 = L.popup({"maxWidth": 300});
+    var icon_5212e31c31f2562ec469ba57bfc27b82 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_80c69410b4a9ebae0777fd9364b062e5.setIcon(
+      icon_5212e31c31f2562ec469ba57bfc27b82
+    );
 
-        
-            var html_b6dd1d9224d650ddbe51500f4620ebe9 = $(`<div id="html_b6dd1d9224d650ddbe51500f4620ebe9" style="width: 100.0%; height: 100.0%;"><b>Forêt proche Plitvice</b><br>Coin forestier tranquille :<br><a href='https://park4night.com/fr/place/245697' target='_blank'>🔗 Voir sur Park4Night</a></div>`)[0];
-            popup_9a1a2934e474193be83eac530bee3eb5.setContent(html_b6dd1d9224d650ddbe51500f4620ebe9);
-        
+    var popup_3906c5d704649baeb8a4f1bae4f63992 = L.popup({ maxWidth: 200 });
 
-        marker_2ed3dfb68bf5b292c94b0b274c0bba7d.bindPopup(popup_9a1a2934e474193be83eac530bee3eb5)
-        ;
+    var html_b41ae8ec40c66c9ac5c4878f985c76d6 = $(
+      `<div id="html_b41ae8ec40c66c9ac5c4878f985c76d6" style="width: 100.0%; height: 100.0%;">Spot Park4Night vers Plitvice<br><a href='https://park4night.com/fr/place/373306' target='_blank'>Voir sur Park4Night</a></div>`
+    )[0];
+    popup_3906c5d704649baeb8a4f1bae4f63992.setContent(
+      html_b41ae8ec40c66c9ac5c4878f985c76d6
+    );
 
-        
-    
-    
-            var marker_e4e5b3ce486c10c9bb19200e9bebe299 = L.marker(
-                [45.7603, 15.7799],
-                {}
-            ).addTo(map_456166c41e42817a4bc93fd4666ea295);
-        
-    
-            var icon_c9486425b75644e43c4888547e49d4af = L.AwesomeMarkers.icon(
-                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
-            );
-            marker_e4e5b3ce486c10c9bb19200e9bebe299.setIcon(icon_c9486425b75644e43c4888547e49d4af);
-        
-    
-        var popup_2cc5db46e3651c228445a633a133aa5f = L.popup({"maxWidth": 300});
+    marker_80c69410b4a9ebae0777fd9364b062e5.bindPopup(
+      popup_3906c5d704649baeb8a4f1bae4f63992
+    );
 
-        
-            var html_6419b80ec6ac22d12babc7f84f73bcc6 = $(`<div id="html_6419b80ec6ac22d12babc7f84f73bcc6" style="width: 100.0%; height: 100.0%;"><b>Entre Zagreb et Samobor</b><br>Forêt tranquille entre Zagreb et Samobor :<br><a href='https://park4night.com/fr/place/439854' target='_blank'>🔗 Voir sur Park4Night</a></div>`)[0];
-            popup_2cc5db46e3651c228445a633a133aa5f.setContent(html_6419b80ec6ac22d12babc7f84f73bcc6);
-        
+    var marker_1b3e4d9c5f7b12f00a9f2d49382557d8 = L.marker(
+      [43.5463, 16.5167],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
 
-        marker_e4e5b3ce486c10c9bb19200e9bebe299.bindPopup(popup_2cc5db46e3651c228445a633a133aa5f)
-        ;
+    var icon_80cd9167887518a6361aa6c67e84a330 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_1b3e4d9c5f7b12f00a9f2d49382557d8.setIcon(
+      icon_80cd9167887518a6361aa6c67e84a330
+    );
 
-        
-    
-</script>
+    var popup_ba6623c2c63f8bfd13ef40770c4f8f25 = L.popup({ maxWidth: 200 });
+
+    var html_b2f1a70c69fb07ef9f08abc521392376 = $(
+      `<div id="html_b2f1a70c69fb07ef9f08abc521392376" style="width: 100.0%; height: 100.0%;">Zone boisée idéale vers Plitvice</div>`
+    )[0];
+    popup_ba6623c2c63f8bfd13ef40770c4f8f25.setContent(
+      html_b2f1a70c69fb07ef9f08abc521392376
+    );
+
+    marker_1b3e4d9c5f7b12f00a9f2d49382557d8.bindPopup(
+      popup_ba6623c2c63f8bfd13ef40770c4f8f25
+    );
+
+    var marker_c9fdcd6d8ed31518abaf6876b132a05f = L.marker(
+      [43.5599, 16.4034],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
+
+    var icon_4b709e08592683bb87f2a38f35a0816b = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_c9fdcd6d8ed31518abaf6876b132a05f.setIcon(
+      icon_4b709e08592683bb87f2a38f35a0816b
+    );
+
+    var popup_7c925987fd7f2742096adbf3794f0423 = L.popup({ maxWidth: 200 });
+
+    var html_f2af83c1866a2811f8fb26cb9ba89f3c = $(
+      `<div id="html_f2af83c1866a2811f8fb26cb9ba89f3c" style="width: 100.0%; height: 100.0%;">Potentiel près du cimetière vers Plitvice</div>`
+    )[0];
+    popup_7c925987fd7f2742096adbf3794f0423.setContent(
+      html_f2af83c1866a2811f8fb26cb9ba89f3c
+    );
+
+    marker_c9fdcd6d8ed31518abaf6876b132a05f.bindPopup(
+      popup_7c925987fd7f2742096adbf3794f0423
+    );
+
+    var marker_4b29c361f247b18a525aaf3c7af2e5cf = L.marker(
+      [43.5336, 16.2712],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
+
+    var icon_30e183114a61d012ebcc6a373f3c2068 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_4b29c361f247b18a525aaf3c7af2e5cf.setIcon(
+      icon_30e183114a61d012ebcc6a373f3c2068
+    );
+
+    var popup_8c2cf8c02bdba0b040b64ae875efb7d2 = L.popup({ maxWidth: 200 });
+
+    var html_271c15c6927b961144af8961ff25030c = $(
+      `<div id="html_271c15c6927b961144af8961ff25030c" style="width: 100.0%; height: 100.0%;">Entrée de Trogir, spot sympa</div>`
+    )[0];
+    popup_8c2cf8c02bdba0b040b64ae875efb7d2.setContent(
+      html_271c15c6927b961144af8961ff25030c
+    );
+
+    marker_4b29c361f247b18a525aaf3c7af2e5cf.bindPopup(
+      popup_8c2cf8c02bdba0b040b64ae875efb7d2
+    );
+
+    var marker_a4f162f7ad8edac15881d10ac163d3d2 = L.marker(
+      [43.7873, 16.0018],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
+
+    var icon_575bb212d2c4fcb3722df6bab566a4e4 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_a4f162f7ad8edac15881d10ac163d3d2.setIcon(
+      icon_575bb212d2c4fcb3722df6bab566a4e4
+    );
+
+    var popup_811d32e58b0cccb277b9a01aac7917c5 = L.popup({ maxWidth: 200 });
+
+    var html_000a3dab2424b19a8d9c79f9da73d632 = $(
+      `<div id="html_000a3dab2424b19a8d9c79f9da73d632" style="width: 100.0%; height: 100.0%;">Spot Park4Night près de Lozovac<br><a href='https://park4night.com/fr/place/492081' target='_blank'>Voir sur Park4Night</a></div>`
+    )[0];
+    popup_811d32e58b0cccb277b9a01aac7917c5.setContent(
+      html_000a3dab2424b19a8d9c79f9da73d632
+    );
+
+    marker_a4f162f7ad8edac15881d10ac163d3d2.bindPopup(
+      popup_811d32e58b0cccb277b9a01aac7917c5
+    );
+
+    var marker_78dd65d9917e8cfc6ff45c4260e2ebf7 = L.marker(
+      [44.0713, 15.5979],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
+
+    var icon_099581873e23a3a87d657e91ff2296bf = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_78dd65d9917e8cfc6ff45c4260e2ebf7.setIcon(
+      icon_099581873e23a3a87d657e91ff2296bf
+    );
+
+    var popup_6b13f88c45cff93946adb7965d852c1f = L.popup({ maxWidth: 200 });
+
+    var html_8ffc6efe23b84fe0687f0109f1ed3b91 = $(
+      `<div id="html_8ffc6efe23b84fe0687f0109f1ed3b91" style="width: 100.0%; height: 100.0%;">Spot Park4Night près de Zadar<br><a href='https://park4night.com/fr/place/192420' target='_blank'>Voir sur Park4Night</a></div>`
+    )[0];
+    popup_6b13f88c45cff93946adb7965d852c1f.setContent(
+      html_8ffc6efe23b84fe0687f0109f1ed3b91
+    );
+
+    marker_78dd65d9917e8cfc6ff45c4260e2ebf7.bindPopup(
+      popup_6b13f88c45cff93946adb7965d852c1f
+    );
+
+    var marker_6473477fe937b3fde82300f3181dcdf1 = L.marker(
+      [44.9433, 15.6694],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
+
+    var icon_4a9de8503260f069620f4f929eb3838b = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_6473477fe937b3fde82300f3181dcdf1.setIcon(
+      icon_4a9de8503260f069620f4f929eb3838b
+    );
+
+    var popup_f41fa1f87e1b0acb858ea5237b59729a = L.popup({ maxWidth: 200 });
+
+    var html_438d6ef495b4d7447350ed1df1c3cae9 = $(
+      `<div id="html_438d6ef495b4d7447350ed1df1c3cae9" style="width: 100.0%; height: 100.0%;">Spot alternatif vers Zadar<br><a href='https://park4night.com/fr/place/569596' target='_blank'>Voir sur Park4Night</a></div>`
+    )[0];
+    popup_f41fa1f87e1b0acb858ea5237b59729a.setContent(
+      html_438d6ef495b4d7447350ed1df1c3cae9
+    );
+
+    marker_6473477fe937b3fde82300f3181dcdf1.bindPopup(
+      popup_f41fa1f87e1b0acb858ea5237b59729a
+    );
+
+    var marker_1862a669290c7e58bc14bb0a911b4d28 = L.marker(
+      [45.1318, 15.5422],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
+
+    var icon_b51a82a655e2b884cbd0814b9604cc10 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_1862a669290c7e58bc14bb0a911b4d28.setIcon(
+      icon_b51a82a655e2b884cbd0814b9604cc10
+    );
+
+    var popup_5084b9c0a72a43990f3d10003978afd8 = L.popup({ maxWidth: 200 });
+
+    var html_96d9d1de6a28af2d3f2c3bf7e4e85cad = $(
+      `<div id="html_96d9d1de6a28af2d3f2c3bf7e4e85cad" style="width: 100.0%; height: 100.0%;">Spot isolé un peu reculé<br><a href='https://park4night.com/fr/place/161596' target='_blank'>Voir sur Park4Night</a></div>`
+    )[0];
+    popup_5084b9c0a72a43990f3d10003978afd8.setContent(
+      html_96d9d1de6a28af2d3f2c3bf7e4e85cad
+    );
+
+    marker_1862a669290c7e58bc14bb0a911b4d28.bindPopup(
+      popup_5084b9c0a72a43990f3d10003978afd8
+    );
+
+    var marker_7fff5bc09e1dbde08233b4b4addeda16 = L.marker(
+      [45.1372, 15.5318],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
+
+    var icon_a5257a0bbfb28288e883179195652556 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_7fff5bc09e1dbde08233b4b4addeda16.setIcon(
+      icon_a5257a0bbfb28288e883179195652556
+    );
+
+    var popup_f47f9c97b3340287b77172a4992780d7 = L.popup({ maxWidth: 200 });
+
+    var html_070167ed56a8223c78899034ece33688 = $(
+      `<div id="html_070167ed56a8223c78899034ece33688" style="width: 100.0%; height: 100.0%;">Spot près de Slunj/Rastoke<br><a href='https://park4night.com/fr/place/245697' target='_blank'>Voir sur Park4Night</a></div>`
+    )[0];
+    popup_f47f9c97b3340287b77172a4992780d7.setContent(
+      html_070167ed56a8223c78899034ece33688
+    );
+
+    marker_7fff5bc09e1dbde08233b4b4addeda16.bindPopup(
+      popup_f47f9c97b3340287b77172a4992780d7
+    );
+
+    var marker_120ad04e91e474d6f83877ae6ed57d85 = L.marker(
+      [45.7603, 15.7799],
+      {}
+    ).addTo(map_50952030ce1f729168f5af736c9ebe34);
+
+    var icon_172dba103c7bbf5bde8d4c7efb91d784 = L.AwesomeMarkers.icon({
+      extraClasses: 'fa-rotate-0',
+      icon: 'tent',
+      iconColor: 'white',
+      markerColor: 'green',
+      prefix: 'fa',
+    });
+    marker_120ad04e91e474d6f83877ae6ed57d85.setIcon(
+      icon_172dba103c7bbf5bde8d4c7efb91d784
+    );
+
+    var popup_971e5e18f38dd85f17c9b252b614cc23 = L.popup({ maxWidth: 200 });
+
+    var html_6b8de6cb3882b176ea8772ffdd80e142 = $(
+      `<div id="html_6b8de6cb3882b176ea8772ffdd80e142" style="width: 100.0%; height: 100.0%;">Coin forestier entre Zagreb et Samobor<br><a href='https://park4night.com/fr/place/439854' target='_blank'>Voir sur Park4Night</a></div>`
+    )[0];
+    popup_971e5e18f38dd85f17c9b252b614cc23.setContent(
+      html_6b8de6cb3882b176ea8772ffdd80e142
+    );
+
+    marker_120ad04e91e474d6f83877ae6ed57d85.bindPopup(
+      popup_971e5e18f38dd85f17c9b252b614cc23
+    );
+  </script>
 </html>
