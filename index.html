@@ -254,14 +254,15 @@
       });
 
       // CAMPING
+
       campingSpots.forEach((s) => {
+        const googleMapsUrl = `https://www.google.com/maps?q=${s.lat},${s.lon}`;
+        const park4nightLink = s.url
+          ? `<a href="${s.url}" target="_blank">Park4Night</a><br>`
+          : '';
+        const mapsLink = `<a href="${googleMapsUrl}" target="_blank">📍 Ouvrir dans Google Maps</a>`;
         L.marker([s.lat, s.lon], { icon: tentIcon })
-          .bindPopup(
-            s.comment +
-              (s.url
-                ? `<br><a href="${s.url}" target="_blank">Park4Night</a>`
-                : '')
-          )
+          .bindPopup(`<b>${s.comment}</b><br>${park4nightLink}${mapsLink}`)
           .addTo(map);
       });
 
